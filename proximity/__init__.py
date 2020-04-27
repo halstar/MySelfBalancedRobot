@@ -1,0 +1,1 @@
+from .proximity import ProximitySensor

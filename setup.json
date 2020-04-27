@@ -1,0 +1,12 @@
+ {
+    "ACCELERATION_X_OFFSET" : 1,
+    "ACCELERATION_Y_OFFSET" : 2,
+    "ACCELERATION_Z_OFFSET" : 3,
+
+    "GYROSCOPE_X_OFFSET"    : 4,
+    "GYROSCOPE_Y_OFFSET"    : 5,
+    "GYROSCOPE_Z_OFFSET"    : 6,
+
+    "LEFT_MOTOR_OFFSET"     : 20,
+    "RIGHT_MOTOR_OFFSET"    : 20
+ }
