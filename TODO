@@ -4,4 +4,5 @@ What could be done next?
 => Read IMU via interrupt/FIFOs mechanism, instead of using polling mechanism,
 => Make I2C, IMU, etc. classes more generic, so that they could easily be reused by other projects,
 => Integrate IMU & motors calibration into robot.py's debug console, in order to have a single entry point,
+=> In obstacles avoidance mode, rely on speed reading (no longer on ultrasonic sensor) to check whether the robot is stuck or not,
 => Add an intermediate abstraction level, like "robot" so that, for exemple, obstacle avoidance mode is built on top of it, like robot.forward(), robot.turn_left(), etc.
