@@ -1,6 +1,8 @@
 import os
 import json
 import queue
+import const
+import utils
 import imu
 import motor
 import encoder
@@ -97,12 +99,12 @@ def balance_control_thread(imu_device, speed_pid_controller, balance_pid_control
         setup_data = json.load(json_file)
 
     # Setup motors with their dedicated GPIOs and offsets
-    left_motor  = motor.Motor(LEFT_MOTOR_ENABLE , LEFT_MOTOR_PIN_1 , LEFT_MOTOR_PIN_2 , setup_data['LEFT_MOTOR_OFFSET' ])
-    right_motor = motor.Motor(RIGHT_MOTOR_ENABLE, RIGHT_MOTOR_PIN_1, RIGHT_MOTOR_PIN_2, setup_data['RIGHT_MOTOR_OFFSET'])
+    left_motor  = motor.Motor(const.USE_RPI_GPIO, LEFT_MOTOR_ENABLE , LEFT_MOTOR_PIN_1 , LEFT_MOTOR_PIN_2 , setup_data['LEFT_MOTOR_OFFSET' ])
+    right_motor = motor.Motor(const.USE_RPI_GPIO, RIGHT_MOTOR_ENABLE, RIGHT_MOTOR_PIN_1, RIGHT_MOTOR_PIN_2, setup_data['RIGHT_MOTOR_OFFSET'])
 
     # Setup left/right motors encoders with their dedicated GPIOs
-    left_encoder  = encoder.Encoder(LEFT_MOTOR_ENCODER_PIN_1 , LEFT_MOTOR_ENCODER_PIN_2 )
-    right_encoder = encoder.Encoder(RIGHT_MOTOR_ENCODER_PIN_1, RIGHT_MOTOR_ENCODER_PIN_2)
+    left_encoder  = encoder.Encoder(const.USE_RPI_GPIO, LEFT_MOTOR_ENCODER_PIN_1 , LEFT_MOTOR_ENCODER_PIN_2 )
+    right_encoder = encoder.Encoder(const.USE_RPI_GPIO, RIGHT_MOTOR_ENCODER_PIN_1, RIGHT_MOTOR_ENCODER_PIN_2)
 
     # Setup IMU
     imu_device.reset        ()
