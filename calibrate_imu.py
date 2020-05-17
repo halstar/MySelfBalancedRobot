@@ -40,7 +40,7 @@ def main():
     print("  ")
 
     for i in range(0, CALIBRATION_LOOP_COUNT):
-        print("\b" + MOVING_STAR_PATTERN[i % 4], end="", flush=True)
+        print("\b" + MOVING_STAR_PATTERN[i % 4], end = '', flush = True)
 
         imu_device.read_acceleration_data()
         imu_device.read_gyroscope_data   ()
