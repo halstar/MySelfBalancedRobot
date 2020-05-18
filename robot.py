@@ -226,7 +226,7 @@ def balance_control_thread(imu_device, speed_pid_controller, balance_pid_control
         if elapsed_time < BALANCE_LOOP_TIME_STEP:
             time.sleep(BALANCE_LOOP_TIME_STEP - elapsed_time)
         elif debug_mode == True:
-            # print("Balance thread is late!")
+            print("Balance thread is late!")
             pass
 
 
@@ -394,7 +394,7 @@ def bluetooth_control_thread():
 
                 if debug_mode == True:
                     print("Received MOTORS OFF command")
-                    are_motors_on = False
+                are_motors_on = False
 
             elif decoded_data == "O1":
 
