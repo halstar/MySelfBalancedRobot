@@ -2,8 +2,8 @@ What could be done next?
 
 => Add some code comments,
 => Add some robustness around,
-=> Replace Bluetooth control with Wifi,
 => Implement/reuse a decent logging system,
+=> Replace Bluetooth control with Wifi control,
 => Add some more configuration parameters into setup.json,
 => Read IMU via interrupt/FIFOs mechanism, instead of using polling mechanism,
 => Make I2C, IMU, etc. classes more generic, so that they could easily be reused by other projects,
