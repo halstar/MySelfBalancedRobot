@@ -2,6 +2,7 @@ What could be done next?
 
 => Add some code comments,
 => Add some robustness around,
+=> Replace Bluetooth control with Wifi,
 => Implement/reuse a decent logging system,
 => Add some more configuration parameters into setup.json,
 => Read IMU via interrupt/FIFOs mechanism, instead of using polling mechanism,
