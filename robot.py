@@ -227,7 +227,6 @@ def balance_control_thread(imu_device, speed_pid_controller, balance_pid_control
             time.sleep(BALANCE_LOOP_TIME_STEP - elapsed_time)
         elif debug_mode == True:
             print("Balance thread is late!")
-            pass
 
 
 def obstacles_avoidance_thread(proximity_sensor):
@@ -474,10 +473,10 @@ def bluetooth_control_thread():
 
             elif decoded_data == "S":
 
-                turn_angle_order = 0.0
-                target_speed     = 0.0
                 if debug_mode == True:
                     print("Received STOP command")
+                turn_angle_order = 0.0
+                target_speed     = 0.0
 
             else:
 
@@ -743,23 +742,23 @@ def main():
     speed_pid_controller       = pid.Pid(SPEED_PID_KP  , SPEED_PID_KI  , SPEED_PID_KD  , SPEED_PID_TARGET  , SPEED_PID_MIN  , SPEED_PID_MAX  , SPEED_PID_WINDUP  )
     balance_pid_controller     = pid.Pid(BALANCE_PID_KP, BALANCE_PID_KI, BALANCE_PID_KD, BALANCE_PID_TARGET, BALANCE_PID_MIN, BALANCE_PID_MAX, BALANCE_PID_WINDUP)
 
-    bluetooth_control = threading.Thread(target=bluetooth_control_thread, args=[])
+    bluetooth_control = threading.Thread(target = bluetooth_control_thread, args = [])
     bluetooth_control.start()
 
-    balance_control = threading.Thread(target=balance_control_thread, args=[imu_device, speed_pid_controller, balance_pid_controller])
+    balance_control = threading.Thread(target = balance_control_thread, args = [imu_device, speed_pid_controller, balance_pid_controller])
     balance_control.start()
 
-    obstacles_avoidance = threading.Thread(target=obstacles_avoidance_thread, args=[proximity_sensor])
+    obstacles_avoidance = threading.Thread(target = obstacles_avoidance_thread, args = [proximity_sensor])
     obstacles_avoidance.start()
 
-    camera_control = threading.Thread(target=camera_control_thread, args=[])
+    camera_control = threading.Thread(target = camera_control_thread, args = [])
     camera_control.start()
 
-    streaming_control = threading.Thread(target=streaming_control_thread, args=[])
+    streaming_control = threading.Thread(target = streaming_control_thread, args = [])
     streaming_control.start()
 
     if debug_mode == True:
-        user_input_control = threading.Thread(target=debug_control_thread, args=[imu_device, proximity_sensor, speed_pid_controller, balance_pid_controller])
+        user_input_control = threading.Thread(target = debug_control_thread, args = [imu_device, proximity_sensor, speed_pid_controller, balance_pid_controller])
         user_input_control.start()
 
     bluetooth_control.join()

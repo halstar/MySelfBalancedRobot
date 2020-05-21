@@ -10,8 +10,14 @@ This repository gathers sources Python scripts to be executed on the Raspberry P
 
 * pip3 install pybluez
 
-**Note**:  gpiozero & pigpio supports were partially tested. For the latter, the following commands might help!
+**Note**: gpiozero & pigpio supports were partially tested. For the latter, the following commands might help!
 
 * sudo pip3 install pigpio
 
 * sudo pigpiod
+
+**Note**: at some point, batteries could not deliver enough power to deal with everything. The following commands helped:
+
+* echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
+
+* sudo /opt/vc/bin/tvservice -o
