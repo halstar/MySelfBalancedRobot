@@ -4,6 +4,10 @@ A homemade self balanced robot built on a Raspberry Pi 3 B+ basis, with differen
 
 This repository gathers sources Python scripts to be executed on the Raspberry Pi.
 
+You can see the result at work in this video:
+
+https://www.youtube.com/watch?v=sTF8HTNk8Ts&t=11s
+
 **Note**: bluetooth may not be installed by default. The following commands might help! 
 
 * sudo apt-get install bluetooth bluez libbluetooth-dev
