@@ -68,7 +68,6 @@ class ImuDevice:
         self.i2c_device.write_byte(GYRO_CONFIG, 0x00)
 
         # Write sample rate divider register
-        #self.i2c_device.write_byte(SMPLRT_DIV, 0x27)
         self.i2c_device.write_byte(SMPLRT_DIV, 0x04)
 
     def __read_word__(self, register):

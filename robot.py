@@ -255,7 +255,7 @@ def obstacles_avoidance_thread(proximity_sensor):
             else:
                 robot_seems_stuck = False
 
-                obstacle_distance_samples.get()
+            obstacle_distance_samples.get()
 
         if is_obstacles_avoidance_on == False:
 
@@ -694,7 +694,6 @@ def debug_control_thread(imu_device, proximity_sensor, speed_pid_controller, bal
                 equilibrium_angle = value
             elif command == 'e':
                 equilibrium_limit = value
-                target_speed = value
             elif command == 'k':
                 complementary_filter_factor = value
 
