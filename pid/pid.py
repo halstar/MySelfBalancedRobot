@@ -60,11 +60,11 @@ class Pid:
     def get_target(self):
         return self.target
 
-    def get_min_value(self, min_value):
-        return min_value
+    def get_min_value(self):
+        return self.min_value
 
-    def get_max_value(self, max_value):
-        return max_value
+    def get_max_value(self):
+        return self.max_value
 
     def get_anti_wind_up(self):
         return self.anti_wind_up_value
